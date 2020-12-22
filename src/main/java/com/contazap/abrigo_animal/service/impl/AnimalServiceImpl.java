@@ -42,7 +42,7 @@ public class AnimalServiceImpl implements AnimalService {
 	}
 
 	@Override
-	public Animal updateStatus() {
+	public Animal getRandomSaude() {
 
 		Animal animal = repository.selectRandom();
 
@@ -52,6 +52,11 @@ public class AnimalServiceImpl implements AnimalService {
 	@Override
 	public Animal save(Animal a) {
 		return repository.save(a);
+	}
+
+	@Override
+	public void updateSaude(Long id, String saude) {
+		repository.updateStatusDb(id, saude);
 	}
 
 }

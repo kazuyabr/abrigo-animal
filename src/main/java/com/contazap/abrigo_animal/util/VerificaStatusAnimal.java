@@ -26,7 +26,7 @@ public class VerificaStatusAnimal {
 	@Scheduled(fixedDelay = DOISMINUTOS)
 	public void verificaPorHora() {
 
-		Animal animal = service.updateStatus();
+		Animal animal = service.getRandomSaude();
 
 		Random rand = new Random();
 
@@ -47,7 +47,7 @@ public class VerificaStatusAnimal {
 
 		System.out.println("Animal Saude Atualizada: " + animal.toString());
 
-		service.save(animal);
+		service.updateSaude(animal.getId(), animal.getSaude().getValue());
 
 	}
 

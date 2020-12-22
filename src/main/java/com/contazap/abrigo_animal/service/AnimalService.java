@@ -12,6 +12,8 @@ public interface AnimalService {
 
 	Animal adoteAnimalOld(TipoEnum tipo);
 
-	Animal updateStatus();
+	Animal getRandomSaude();
+
+	void updateSaude(Long id, String saude);
 
 }
